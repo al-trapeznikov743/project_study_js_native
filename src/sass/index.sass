@@ -1,0 +1,134 @@
+*
+    margin: 0
+    box-sizing: border-box
+
+.container
+    padding-left: 150px
+    padding-right: 150px
+    background: url('https://www.artwall.ru/static/v2/images/popart-2.jpg') center (center / cover) no-repeat
+
+.button
+    width: 130px
+    padding: 10px
+    text-transform: uppercase
+    text-align: center
+    color: #fff
+    background-color: #a30000
+    cursor: pointer
+    &:focus
+        outline: none
+    &:hover
+        opacity: 0.7
+    
+.header
+    display: flex
+    justify-content: space-between
+    min-height: 65px
+    color: #ffffff
+    background: url('https://img5.goodfon.ru/wallpaper/nbig/6/30/fantasy-art-art-fantastika-josef-barton-by-josef-barton-by-1.jpg') center (center / cover) no-repeat
+    border: 0.5px solid #a30000
+    &__logo
+        margin: 5px
+        margin-left: 20px
+        width: 60px
+        height: 60px
+    &__icon
+        display: block
+        width: 55px
+        height: 55px
+        background-color: #a37e7e
+        border-radius: 100%
+        border: 2px solid #000000e8
+        &:hover
+            border: 2px solid #a30000
+    &__img
+        width: 50px
+        margin-left: 1px
+        margin-top: 1px
+    &__description
+        display: flex
+        align-items: center
+    &__buttons
+        display: flex
+        align-items: center
+        width: 70px
+    &__button
+        margin-left: 5px
+        height: 24px
+        min-width: 24px
+        padding: 3px
+        text-align: center
+        position: relative
+        display: inline-block
+        color: #000000e8
+        user-select: none
+        & span
+            font-size: 18px
+        &:active, &.active
+            color: red // $color
+        &:hover
+            cursor: pointer
+
+.act
+    display: flex
+    justify-content: space-between
+    min-height: 100px
+    border: 0.5px solid black
+    &__status
+        display: flex
+        justify-content: space-between
+        min-width: 65px
+        font-size: 18px
+        align-items: center
+        margin-right: 30px
+    &__button
+        height: 40px
+        margin-top: 30px
+        margin-left: 20px
+
+.counter
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    min-height: 500px
+    border: 0.5px solid black
+    background: url('https://img5.goodfon.ru/wallpaper/nbig/6/30/fantasy-art-art-fantastika-josef-barton-by-josef-barton-by-1.jpg') center (center / cover) no-repeat
+    &__black_square
+        width: 300px
+        height: 300px
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: black
+        color: #fff
+        font-size: 25px
+        border-radius: 100%
+    &__lives
+        display: flex
+        flex-direction: column
+        padding-top: 74px
+        align-items: center
+    &__zero
+        margin-top: 45px
+    &__count
+        display: flex
+        justify-content: space-between
+        margin-top: 50px
+
+.footer
+    display: flex
+    justify-content: center
+    border: 0.5px solid black
+    min-height: 150px
+    &__title
+        font-size: 20px
+        margin-top: 20px
+    &__technologies
+        list-style-type: none
+        margin-top: 15px
+    &__link
+        text-decoration: none
+        color: #000000
+        &:hover
+            color: #a30000
