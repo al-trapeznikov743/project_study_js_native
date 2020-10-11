@@ -3,10 +3,11 @@ import {SpaceComponent} from '@core/SpaceComponent'
 export class Header extends SpaceComponent {
     static className = 'header'
 
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Header',
-            listeners: ['click']
+            listeners: ['click'],
+            ...options
         })
     }
 

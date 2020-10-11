@@ -3,10 +3,11 @@ import {SpaceComponent} from '@core/SpaceComponent'
 export class Footer extends SpaceComponent {
     static className = 'footer'
 
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Footer',
-            listeners: []
+            listeners: [],
+            ...options
         })
     }
 
@@ -20,6 +21,9 @@ export class Footer extends SpaceComponent {
                     </li>
                     <li>
                         <a href="https://webpack.js.org/" class="footer__link">Webpack</a>
+                    </li>
+                    <li>
+                        <a href="https://habr.com/ru/post/439104/" class="footer__link">Redux</a>
                     </li>
                     <li>
                         <a href="https://refactoring.guru/ru/design-patterns/observer" class="footer__link">Observer Pattern</a>

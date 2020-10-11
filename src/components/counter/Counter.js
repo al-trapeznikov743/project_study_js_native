@@ -3,10 +3,11 @@ import {SpaceComponent} from '@core/SpaceComponent'
 export class Counter extends SpaceComponent {
     static className = 'counter'
 
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Counter',
-            listeners: []
+            listeners: [],
+            ...options
         })
     }
 
