@@ -15,7 +15,7 @@ export class Header extends SpaceComponent {
     toHTML() {
         return `
             <div class="header__logo">
-                <a href="#" class="header__icon">
+                <a href="https://github.com/al-trapeznikov743" class="header__icon">
                     <img src="logo.png" alt="logo" class="header__img">
                 </a>
             </div>

@@ -9,12 +9,14 @@ export class Space {
         this.components = options.components || []
         // создаём единый emitter(observer) для всего приложения
         this.emitter = new Emitter()
+        this.store = options.store
     }
     getRoot() {
         // создаём $root - корневой элемент для компонентов приложения
         const $root = $.create('div', 'space')
         const componentOptions = {
-            emitter: this.emitter
+            emitter: this.emitter,
+            store: this.store
         }
         // переопределяем массив this.components (создаём экземпляры классов (компоненты) и заносим их в наш массив)
         this.components = this.components.map(Component => {
