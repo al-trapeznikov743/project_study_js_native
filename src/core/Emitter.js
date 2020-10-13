@@ -6,7 +6,7 @@ export class Emitter {
     // dispatch, fire, trigger
     // уведомляем слушателей(подписчиков), если они есть
     emit(eventName, ...args) {
-        if (Array.isArray(this.listeners[eventName])) {
+        if (!Array.isArray(this.listeners[eventName])) {
             return false
         }
         this.listeners[eventName].forEach(listener => {

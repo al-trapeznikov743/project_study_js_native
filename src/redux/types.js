@@ -1,0 +1,2 @@
+export const STATUS_CHANGE = 'STATUS_CHANGE'
+export const LIVE_CHANGE = 'LIVE_CHANGE'
