@@ -7,7 +7,6 @@ export class SpaceComponent extends DomListener {
         this.emitter = options.emitter
         this.store = options.store
         this.unsubscribers = []
-        this.storeSub = null
 
         this.prepare()
     }
@@ -28,13 +27,11 @@ export class SpaceComponent extends DomListener {
         const unsub = this.emitter.subscribe(eventName, callback)
         this.unsubscribers.push(unsub)
     }
-
     $dispatch(action) {
         this.store.dispatch(action)
     }
-    $subscribe(fn) {
-        this.storeSub = this.store.subscribe(fn)
-    }
+    // приходят изменения по тем полям, на которые мы подписаны
+    storeChanged() {}
     // инициализация компонента, добавление DOM-listeners
     init() {
         this.initDomListeners()
@@ -43,6 +40,5 @@ export class SpaceComponent extends DomListener {
     destroy() {
         this.removeDomListeners()
         this.unsubscribers.forEach(unsub => unsub())
-        this.storeSub.unsubscribe()
     }
 }

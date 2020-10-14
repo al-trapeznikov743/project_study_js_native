@@ -5,8 +5,10 @@ export function createStore(rootReducer, initialState = {}) {
     return {
         subscribe(callback) {
             subscribers.push(callback)
-            return () => {
-                subscribers = subscribers.filter(fn => fn !== callback)
+            return {
+                unsubscribe() {
+                    subscribers = subscribers.filter(fn => fn !== callback)
+                }
             }
         },
         dispatch(action) {

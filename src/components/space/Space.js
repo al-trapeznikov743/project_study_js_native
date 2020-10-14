@@ -1,15 +1,15 @@
 import {$} from '@core/dom'
 import {Emitter} from '@core/Emitter'
+import {StoreSubscriber} from '@core/StoreSubscriber'
 
 export class Space {
-    constructor(selector, options) {
-        // принимаем корневой элемент приложения и записываем его в this.$el
-        this.$el = $(selector)
+    constructor(options) {
         // записываем массив классов компонентов приложения
         this.components = options.components || []
         // создаём единый emitter(observer) для всего приложения
         this.emitter = new Emitter()
         this.store = options.store
+        this.subscriber = new StoreSubscriber(this.store)
     }
     getRoot() {
         // создаём $root - корневой элемент для компонентов приложения
@@ -33,13 +33,13 @@ export class Space {
         return $root
     }
 
-    render() {
-        // помещаем наш $root в корень приложения this.$el
-        this.$el.append(this.getRoot())
+    init() {
         // инициализируем компоненты уже после их рендера (отрисовки страницы), навешиваем обработчики и т.д.
+        this.subscriber.subscribeComponents(this.components)
         this.components.forEach(component => component.init())
     }
     destroy() {
+        this.subscriber.unsubscribeFromStore()
         this.components.forEach(component => component.destroy())
     }
 }
